@@ -11,7 +11,7 @@ N = int(input())
 M = int(input())
 list = list(list(map(int, input().split())) for _ in range(M))
 distance = [INF] *  (N+ 1)  # value
-visited =[False] * (N+1)
+visited = [False] * (N+1)
 
 start, end = map(int, input().split())
 
@@ -28,15 +28,6 @@ for data in list :
     s, d, v = data[0], data[1], data[2]
     graph[s].append((d,v))
 
-# print(graph)
-
-# pq = []                 # 빈 우선순위 큐 생성
-# heapq.heappush(pq, 5)   # 값 추가
-# heapq.heappush(pq, 1)
-# heapq.heappush(pq, 3)
-#
-# print(heapq.heappop(pq))  # 1 (가장 작은 값)
-# print(heapq.heappop(pq))  # 3
 
 def dijkstra(start) :
 
@@ -54,9 +45,7 @@ def dijkstra(start) :
             if dist + i[1] < distance[i[0]] : #경유해서 가는길 과 직접 가는길 비교 최소 값이면, # 기존에 입력되어있는 값보다 크다면
                 distance[i[0]] =  dist + i[1]
                 heapq.heappush(pq, (dist + i[1], i[0]))
+
 dijkstra(start)
-
 print(distance[end])
-
-
 

@@ -13,11 +13,7 @@ for i in range(N):
         print("x " , x)
         adj[i].append(x - 1)
 
-print("kk ,", adj)
-
 areas = [i for i in range(N)]
-
-print("kk2 ", areas)
 
 def bfs(group):
     start = group[0]
@@ -38,12 +34,10 @@ def bfs(group):
 result = 1e9
 
 for r in range(1, N):
-    print("fdsadf r ", r, combinations(areas, r))
     for groupA in combinations(areas, r):
 
         groupB = list(set(areas) - set(groupA))
 
-        # print("groupAA ", set(areas) )
         print("groupAA ", groupA)
         print("groupBB ",groupB )
 
